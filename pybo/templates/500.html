@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<!-- 500 오류페이지 -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <span class="display-1 d-block">500</span>
+            <div class="mb-4 lead">서버에러</div>
+            <a href="/" class="btn btn-link">홈으로 돌아가기</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
