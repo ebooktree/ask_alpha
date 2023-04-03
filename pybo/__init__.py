@@ -4,7 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flaskext.markdown import Markdown
 from sqlalchemy import MetaData
 
-import config
+# import config # AWS에 배포 하면서 변경
+
 
 naming_convention = {
     "ix": 'ix_%(column_0_label)s',
@@ -19,7 +20,8 @@ migrate = Migrate()
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object(config)
+    # app.config.from_object(config) # AWS배포하면서 변경
+    app.config.from_envvar('APP_CONFIG_FILE')
 
     # ORM
     db.init_app(app)
