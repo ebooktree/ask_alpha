@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p>Search Keyword</p>
+
+    <form method="post" action="/search">
+      {{ form.csrf_token }}
+      {% include "form_errors.html" %}
+      <label for="keyword">Keyword:</label>
+      <input type="text" id="keyword" name="keyword">
+      <input type="submit" value="Search">
+    </form>
+{% endblock %}

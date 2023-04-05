@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="hero">
+  <h1 class="text-center text-success pt-5">인공지능 도서추천사 똑똑</h1>
+  <h2 class="text-center text-dark pb-5">
+    지금 마음상태에 도움될 도서를 추천해드릴께요!
+  </h2>
+  <h3 class="text-center text-dark pb-5">마음상태가 어떠신가요?</h3>
+</div>
+
+<!-- 검색 입력폼과 버튼 생성하기 start -->
+<!-- 아래 컬러버튼 값을 가져오도록 하는 입력칸 -->
+<div class="container mt-6">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <form method="post" action="{{ url_for('search.search_result') }}">
+        {{ form.hidden_tag() }}
+        {% include "form_errors.html" %}
+        <div class="form-group row">
+          <div class="col-md-9">
+            <input
+              id="search-input"
+              class="form-control mr-sm-2 text-center"
+              type="search"
+              placeholder="여러분의 지금 마음을 입력해주세요! (예: Suffering, Happy)"
+              aria-label="Search"
+              name="keyword"
+            />
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-primary" onclick="saveSearchKeyword()">입력하기</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<p class="text-center text-dark">
+  버튼을 누르시면, 여러분에게 필요한 책을 추천해 드립니다.
+</p>
+<!-- 검색 입력폼과 버튼 생성하기 end -->
+
+<!-- 버튼들을 출력할 영역 start -->
+<div class="text-center"></div>
+<div id="button-container-test2" class="text-center">
+  {% for emotion, sub_emotions in color_ranges.items() %} {% for sub_emotion,
+  color_range in sub_emotions.items() %} {% set colors = color_range.split(":")
+  %}
+  <button
+    type="button"
+    class="btn btn-primary"
+    style="background-color: {{ colors[0] }};"
+    onclick="document.getElementById('search-input').value = '{{ sub_emotion }}';"
+  >
+    {{ sub_emotion }}
+  </button>
+  {% endfor %} {% endfor %}
+</div>
+<!-- 버튼들을 출력할 영역 end -->
+
+{% endblock %}

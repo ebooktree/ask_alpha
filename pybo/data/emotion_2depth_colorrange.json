@@ -1,0 +1,47 @@
+{
+    "Sadness": {
+        "Suffering": "#0900FF:#0FF4FF",
+        "SoSadness": "#0FF4FF:#2FF0FF",
+        "Disappointed": "#2FF0FF:#4FECFF",
+        "Shameful": "#4FECFF:#6FE8FF",
+        "Neglected": "#6FE8FF:#8FE4FF",
+        "Despair": "#8FE4FF:#74F8F0"
+    },
+    "Surprise": {
+        "Stunned": "#74F8F1:#8DFD68",
+        "Confused": "#8DFD68:#A6FD3F",
+        "Amazed": "#A6FD3F:#C0FD17",
+        "Overcome": "#C0FD17:#D9F900",
+        "Moved": "#D9F900:#75FB4E"
+    },
+    "Joy": {
+        "Happy": "#75FB4F:#8CFA5F",
+        "Cheerful": "#8CFA5F:#A8F86E",
+        "Proud": "#A8F86E:#C5F67D",
+        "Optimistic": "#C5F67D:#E1F48C",
+        "Enthusiastic": "#E1F48C:#FDF29B",
+        "Elation": "#FDF29B:#FFE0A5",
+        "Enthralled": "#FFE0A5:#FFFD53"
+    },
+    "Love": {
+        "Affectionate": "#FFFD54:#FFDD00",
+        "Longing": "#FFDD00:#FFA600",
+        "Desire": "#FFA600:#FF6F00",
+        "Tenderness": "#FF6F00:#FF3800",
+        "Peaceful": "#FF3800:#FF0401"
+    },
+    "Fear": {
+        "Scared": "#FF0402:#FF030E",
+        "Terror": "#FF030E:#FF1AB6",
+        "Insecure": "#FF1AB6:#FF32FE",
+        "Nervous": "#FF32FE:#FF4AE6",
+        "Horror": "#FF4AE6:#FF00F5"
+    },
+    "Anger": {
+        "Rage": "#FF00F6:#FF00A3",
+        "Exasperated": "#FF00A3:#FF0060",
+        "Irritable": "#FF0060:#FF001D",
+        "Envy": "#FF001D:#0900DA",
+        "Disgust": "#0900DA:#0900FE"
+    }
+}

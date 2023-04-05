@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 class="text-center">Search Result</h2>
+<hr />
+
+<div class="container mt-3">
+  {% if search_results %}
+  <ul class="list-group">
+    {% for search_result in search_results %}
+    <li class="list-group-item">
+      <span class="fw-bold">{{ search_result.book_name }}</span> is related to
+      <span class="fw-bold">{{ search_result.emotion_keyword }}</span>.
+      The cover is <span class="fw-bold">{{ search_result.coverNo }}</span>.
+      The book kind is <span class="fw-bold">{{ search_result.typeName }}</span>.
+      And this book is in  <span class="fw-bold">{{ search_result.licText }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="text-center">검색 결과가 없습니다.</p>
+  {% endif %}
+</div>
+
+{% endblock %}

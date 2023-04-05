@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -5,6 +6,7 @@ from flaskext.markdown import Markdown
 from sqlalchemy import MetaData
 
 # import config # AWS에 배포 하면서 변경
+
 
 
 naming_convention = {
@@ -37,11 +39,12 @@ def create_app():
     from . import models
 
     # 블루프린트
-    from .views import main_views, question_views, answer_views, auth_views
+    from .views import main_views, question_views, answer_views, auth_views, search_views
     app.register_blueprint(main_views.bp)
     app.register_blueprint(question_views.bp)
     app.register_blueprint(answer_views.bp)
     app.register_blueprint(auth_views.bp)
+    app.register_blueprint(search_views.bp) # 1차 검색용 추가    
 
     # 필터
     from .filter import format_datetime
@@ -55,3 +58,6 @@ def create_app():
     app.register_error_handler(500, server_error)
 
     return app
+
+
+

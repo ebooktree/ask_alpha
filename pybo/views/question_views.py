@@ -1,5 +1,8 @@
 # 블루프린트로 기능 분리하기
-# 지금까지는 질문 목록과 질문 상세 기능을 main_views.py 파일에 구현했다. 모든 기능을 main_views.py 파일에 구현할 수도 있지만, 각 기능을 블루프린트 파일로 분리해서 관리하면 유지·보수하는 데 유리하다.
+# 지금까지는 질문 목록과 질문 상세 기능을 main_views.py 파일에 구현했다. 
+# 모든 기능을 main_views.py 파일에 구현할 수도 있지만,
+# 각 기능을 블루프린트 파일로 분리해서 관리하면 유지·보수하는 데 유리하다.
+
 from datetime import datetime
 
 from flask import Blueprint, render_template, request, url_for, g, flash
