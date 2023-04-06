@@ -5,17 +5,30 @@
 
 <div class="container mt-3">
   {% if search_results %}
-  <ul class="list-group">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 20%">책 표지</th>
+        <th scope="col" style="width: 20%">도서 제목</th>
+        <th scope="col">감정 키워드</th>
+        <th scope="col">자료 종류</th>
+        <th scope="col">자료 위치</th>
+      </tr>
+    </thead>
+    <tbody>
     {% for search_result in search_results %}
-    <li class="list-group-item">
-      <span class="fw-bold">{{ search_result.book_name }}</span> is related to
-      <span class="fw-bold">{{ search_result.emotion_keyword }}</span>.
-      The cover is <span class="fw-bold">{{ search_result.coverNo }}</span>.
-      The book kind is <span class="fw-bold">{{ search_result.typeName }}</span>.
-      And this book is in  <span class="fw-bold">{{ search_result.licText }}</span>
-    </li>
+      <tr>
+        <td>
+          <img src="{{ url_for('static', filename='bookcover/' + search_result.cover_number + '.jpg') }}" alt="{{ search_result.book_name }}" style="width:120px; height:180px;">
+        </td>
+        <td>{{ search_result.book_name }}</td>
+        <td>{{ search_result.emotion_keyword }}</td>
+        <td>{{ search_result.kind }}</td>
+        <td>{{ search_result.place }}</td>
+      </tr>
     {% endfor %}
-  </ul>
+    </tbody>
+  </table>
   {% else %}
   <p class="text-center">검색 결과가 없습니다.</p>
   {% endif %}

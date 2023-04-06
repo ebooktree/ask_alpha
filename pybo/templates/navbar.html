@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('main.index') }}">똑똑</a>
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">"똑똑"</a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -19,14 +19,13 @@
             {% else %}
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('auth.signup') }}">계정생성</a>
+                    <a class="nav-link" href="{{ url_for('question._list') }}">도서 요청하기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('auth.signup') }}">회원가입</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('auth.login') }}">로그인</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('search.search_detail') }}">똑똑 검색하기</a>
                 </li>
             </ul>
             {% endif %}
